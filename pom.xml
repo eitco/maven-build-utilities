@@ -26,9 +26,9 @@
     </developers>
 
     <scm>
-        <url>https://github.com/eitco/build-utilities-maven-plugin.git</url>
-        <connection>scm:git:https://github.com/eitco/build-utilities-maven-plugin.git</connection>
-        <developerConnection>scm:git:https://github.com/eitco/build-utilities-maven-plugin.git</developerConnection>
+        <url>https://github.com/eitco/maven-build-utilities.git</url>
+        <connection>scm:git:https://github.com/eitco/maven-build-utilities.git</connection>
+        <developerConnection>scm:git:https://github.com/eitco/maven-build-utilities.git</developerConnection>
     </scm>
 
 
