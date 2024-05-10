@@ -42,7 +42,7 @@
 
     <repositories>
         <repository>
-            <id>eitco-oss-snapshots</id>
+            <id>github</id>
             <url>https://maven.pkg.github.com/eitco/eitco-oss-parent</url>
             <releases>
                 <enabled>false</enabled>

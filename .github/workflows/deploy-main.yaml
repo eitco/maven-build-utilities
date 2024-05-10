@@ -16,7 +16,10 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
           cache: maven
+          server-id: github
           gpg-private-key: ${{ secrets.ARTIFACT_SIGNING_GPG_PRIVATE_KEY }}
+          server-username: ${{ secrets.DEPLOY_USER_GITHUB_PACKAGES }}
+          server-password: ${{ secrets.DEPLOY_TOKEN_GITHUB_PACKAGES }}
       - name: execute maven
         run: export GPG_TTY=$(tty) && mvn --batch-mode deploy -e
         env:
