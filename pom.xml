@@ -10,6 +10,8 @@
 <!--    </parent>-->
 
 
+            <groupId>de.eitco</groupId>
+            <version>0.0.1-SNAPSHOT</version>
     <artifactId>build-utilities-maven-plugin</artifactId>
     <packaging>maven-plugin</packaging>
 
