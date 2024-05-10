@@ -5,7 +5,7 @@
  * Created on 16.08.2021
  *
  */
-package de.eitco.commons.build.essentials;
+package de.eitco.cicd.build.utilities;
 
 
 import org.apache.maven.plugin.AbstractMojo;

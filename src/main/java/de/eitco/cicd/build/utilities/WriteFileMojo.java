@@ -5,7 +5,7 @@
  * Created on 06.05.2020
  *
  */
-package de.eitco.commons.build.essentials;
+package de.eitco.cicd.build.utilities;
 
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
