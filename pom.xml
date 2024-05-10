@@ -10,7 +10,7 @@
 
 
     <artifactId>build-utilities-maven-plugin</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.2-SNAPSHOT</version>
     <packaging>maven-plugin</packaging>
 
     <developers>
@@ -28,7 +28,7 @@
         <url>https://github.com/eitco/maven-build-utilities.git</url>
         <connection>scm:git:https://github.com/eitco/maven-build-utilities.git</connection>
         <developerConnection>scm:git:https://github.com/eitco/maven-build-utilities.git</developerConnection>
-      <tag>0.0.1</tag>
+      <tag>HEAD</tag>
   </scm>
 
 
