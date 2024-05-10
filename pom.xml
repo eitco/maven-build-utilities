@@ -6,7 +6,7 @@
     <parent>
         <groupId>de.eitco</groupId>
         <artifactId>eitco-oss-parent</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
+        <version>0.0.1</version>
     </parent>
 
 
@@ -40,21 +40,6 @@
             <artifactId>maven-core</artifactId>
         </dependency>
     </dependencies>
-
-    <repositories>
-        <repository>
-            <id>github</id>
-            <url>https://maven.pkg.github.com/eitco/eitco-oss-parent</url>
-            <releases>
-                <enabled>false</enabled>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-                <checksumPolicy>fail</checksumPolicy>
-                <updatePolicy>never</updatePolicy>
-            </snapshots>
-        </repository>
-    </repositories>
 
     <build>
         <plugins>
