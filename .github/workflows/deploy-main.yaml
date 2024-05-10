@@ -1,0 +1,25 @@
+name: deploy main branch
+
+on:
+  push:
+    branches: [ main ]
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: set up jdk
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: maven
+          gpg-private-key: ${{ secrets.ARTIFACT_SIGNING_GPG_PRIVATE_KEY }}
+      - name: execute maven
+        run: export GPG_TTY=$(tty) && mvn --batch-mode deploy -e
+        env:
+          GPG_KEY_NAME: ${{ secrets.ARTIFACT_SIGNING_GPG_KEY_NAME }}
+          MAVEN_GPG_PASSPHRASE: ${{ secrets.ARTIFACT_SIGNING_GPG_PRIVATE_KEY_PASSWORD }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
