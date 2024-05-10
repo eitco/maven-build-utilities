@@ -21,7 +21,7 @@ jobs:
           server-username: ${{ secrets.DEPLOY_USER_GITHUB_PACKAGES }}
           server-password: ${{ secrets.DEPLOY_TOKEN_GITHUB_PACKAGES }}
       - name: execute maven
-        run: export GPG_TTY=$(tty) && mvn --batch-mode help:effective-settings deploy -e
+        run: export GPG_TTY=$(tty) && mvn --batch-mode -e help:effective-settings
         env:
           GPG_KEY_NAME: ${{ secrets.ARTIFACT_SIGNING_GPG_KEY_NAME }}
           MAVEN_GPG_PASSPHRASE: ${{ secrets.ARTIFACT_SIGNING_GPG_PRIVATE_KEY_PASSWORD }}
