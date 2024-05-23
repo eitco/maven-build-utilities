@@ -1,5 +1,6 @@
 # eitco maven build utilities
 
+[![License](https://img.shields.io/github/license/eitco/bom-maven-plugin.svg?style=for-the-badge)](https://opensource.org/license/mit)
 [![Build status](https://img.shields.io/github/actions/workflow/status/eitco/maven-build-utilities/deploy.yaml?branch=main&style=for-the-badge&logo=github)](https://github.com/eitco/eitco-oss-parent/actions/workflows/deploy.yaml)
 [![Maven Central Version](https://img.shields.io/maven-central/v/de.eitco.cicd/build-utilities-maven-plugin?style=for-the-badge&logo=apachemaven)](https://central.sonatype.com/artifact/de.eitco.cicd/build-utilities-maven-plugin)
 
