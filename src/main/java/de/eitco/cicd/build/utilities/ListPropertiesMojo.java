@@ -8,7 +8,6 @@
 package de.eitco.cicd.build.utilities;
 
 import org.apache.maven.plugin.AbstractMojo;
-import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugins.annotations.LifecyclePhase;
 import org.apache.maven.plugins.annotations.Mojo;
 import org.apache.maven.plugins.annotations.Parameter;
@@ -16,6 +15,9 @@ import org.apache.maven.project.MavenProject;
 
 import java.util.Map;
 
+/**
+ * This goal prints all properties and their value currently available. This is mostly thought of for debugging purposes.
+ */
 @Mojo(name = "list-properties", defaultPhase = LifecyclePhase.INITIALIZE, threadSafe = true)
 public class ListPropertiesMojo extends AbstractMojo {
 
@@ -24,7 +26,7 @@ public class ListPropertiesMojo extends AbstractMojo {
 
 
     @Override
-    public void execute() throws MojoExecutionException {
+    public void execute() {
 
 
         StringBuilder builder = new StringBuilder();

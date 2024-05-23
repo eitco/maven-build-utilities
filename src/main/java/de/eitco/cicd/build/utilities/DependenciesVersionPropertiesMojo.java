@@ -9,7 +9,6 @@ package de.eitco.cicd.build.utilities;
 
 import org.apache.maven.artifact.Artifact;
 import org.apache.maven.plugin.AbstractMojo;
-import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugins.annotations.LifecyclePhase;
 import org.apache.maven.plugins.annotations.Mojo;
 import org.apache.maven.plugins.annotations.Parameter;
@@ -18,6 +17,14 @@ import org.apache.maven.project.MavenProject;
 
 import java.util.Set;
 
+/**
+ * This goal generates properties, containing the version and file system path of every direct dependency the
+ * current project has. For every dependency, two properties are generated: 'maven.dependency.&lt;dependency-conflict-id&gt;.file'
+ * set to the absolute file system path of the dependency and 'maven.dependency.&lt;dependency-conflict-id&gt;.version'
+ * set to the version of the dependency.
+ * The dependency conflict id is constructed as follows: &lt;groupId&gt;:&lt;artifactId&gt;:&lt;type&gt;[&lt;classifier&gt;]
+ *
+ */
 @Mojo(name = "dependencies-version-properties", requiresDependencyResolution = ResolutionScope.TEST, defaultPhase = LifecyclePhase.INITIALIZE, threadSafe = true)
 public class DependenciesVersionPropertiesMojo extends AbstractMojo {
 
@@ -31,7 +38,7 @@ public class DependenciesVersionPropertiesMojo extends AbstractMojo {
     private boolean skip;
 
     @Override
-    public void execute() throws MojoExecutionException {
+    public void execute() {
 
         if (skip) {
 
