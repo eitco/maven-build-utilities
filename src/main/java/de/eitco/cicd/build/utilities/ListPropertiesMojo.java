@@ -24,6 +24,11 @@ public class ListPropertiesMojo extends AbstractMojo {
     @Parameter(defaultValue = "${project}", readonly = true, required = true)
     private MavenProject project;
 
+    /**
+     * This parameter specifies a prefix. If set, only properties beginning with this prefix will be listed.
+     */
+    @Parameter
+    private String prefix;
 
     @Override
     public void execute() {
@@ -32,6 +37,11 @@ public class ListPropertiesMojo extends AbstractMojo {
         StringBuilder builder = new StringBuilder();
 
         for (Map.Entry<Object, Object> property : project.getProperties().entrySet()) {
+
+            if (prefix != null && !property.getKey().toString().startsWith(prefix)) {
+
+                continue;
+            }
 
             builder.append(property.getKey()).append(" = ").append(property.getValue()).append("\n");
         }
