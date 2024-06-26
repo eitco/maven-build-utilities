@@ -7,12 +7,18 @@
  */
 package de.eitco.cicd.build.utilities;
 
+import org.apache.commons.io.FileUtils;
 import org.apache.maven.plugin.AbstractMojo;
+import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugins.annotations.LifecyclePhase;
 import org.apache.maven.plugins.annotations.Mojo;
 import org.apache.maven.plugins.annotations.Parameter;
 import org.apache.maven.project.MavenProject;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
 import java.util.Map;
 
 /**
@@ -30,8 +36,14 @@ public class ListPropertiesMojo extends AbstractMojo {
     @Parameter
     private String prefix;
 
+    /**
+     * This parameter sets the file to write the properties to. If not set the properties will simply be logged.
+     */
+    @Parameter
+    private File outputFile;
+
     @Override
-    public void execute() {
+    public void execute() throws MojoExecutionException {
 
 
         StringBuilder builder = new StringBuilder();
@@ -46,7 +58,24 @@ public class ListPropertiesMojo extends AbstractMojo {
             builder.append(property.getKey()).append(" = ").append(property.getValue()).append("\n");
         }
 
-        getLog().info("project properties : \n" + builder);
+        if (outputFile != null) {
+
+            try {
+
+                FileUtils.forceMkdir(outputFile.getParentFile());
+
+                Files.writeString(outputFile.toPath(), builder.toString());
+
+            } catch (IOException e) {
+
+                throw new MojoExecutionException(e);
+            }
+
+
+        } else {
+
+            getLog().info("project properties : \n" + builder);
+        }
 
     }
 }
