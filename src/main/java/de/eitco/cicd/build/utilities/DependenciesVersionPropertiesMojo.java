@@ -42,11 +42,14 @@ public class DependenciesVersionPropertiesMojo extends AbstractMojo {
     private MavenProject project;
 
     /**
-     * Skip plugin execution completely.
+     * If this parameter is set to {@code true} the plugin execution is skipped completely.
      */
     @Parameter(property = "dependencies-version-properties.skip", defaultValue = "false")
     private boolean skip;
 
+    /**
+     *  This parameter specifies whether to add properties holding the files of the dependencies.
+     */
     @Parameter(property = "dependencies-version-properties.add-files", defaultValue = "false")
     private boolean addFiles;
 

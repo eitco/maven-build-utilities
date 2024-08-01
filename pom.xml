@@ -58,6 +58,9 @@
         <plugins>
             <plugin>
                 <artifactId>maven-release-plugin</artifactId>
+                <configuration>
+                    <goals>deploy site site:stage scm-publish:publish-scm</goals>
+                </configuration>
             </plugin>
             <plugin>
                 <artifactId>maven-resources-plugin</artifactId>
@@ -77,6 +80,32 @@
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>license-maven-plugin</artifactId>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-site-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-scm-publish-plugin</artifactId>
+            </plugin>
         </plugins>
     </build>
+
+    <reporting>
+        <excludeDefaults>true</excludeDefaults>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-plugin-report-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </reporting>
+
+    <distributionManagement>
+        <site>
+            <id>github</id>
+            <url>scm:git:https://github.com/eitco/eitco.github.io.git</url>
+        </site>
+    </distributionManagement>
+
 </project>
