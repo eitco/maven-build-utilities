@@ -29,15 +29,17 @@ Add the following plugin to your build:
 ```
 Check for the latest version [here](https://central.sonatype.com/artifact/de.eitco.cicd/build-utilities-maven-plugin). This enables the following goals: 
 
+The following goals exist:
+
 ## dependencies-version-properties
 
 This goal generates properties, containing the version and file system path of every direct dependency the current
 project has. For every dependency, two properties are generated: 
     
-* 'maven.dependency.<dependency-conflict-id>.file' set to the absolute file system path of the dependency 
-* 'maven.dependency.<dependency-conflict-id>.version' set to the version of the dependency.
+* `maven.dependency.<dependency-conflict-id>.file` set to the absolute file system path of the dependency 
+* `maven.dependency.<dependency-conflict-id>.version` set to the version of the dependency.
 
-The dependency conflict id is constructed as follows: &lt;groupId&gt;:&lt;artifactId&gt;:&lt;type&gt;[&lt;classifier&gt;]
+The dependency conflict id is constructed as follows: `<groupId>:<artifactId>:<type>[<classifier>]`
 
 ## list-properties
 
