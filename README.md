@@ -76,3 +76,4 @@ property: `write.file.skip`
 
 Whether the execution should be skipped
 
+* A complete reference of the available goals and parameters is available as [github page](https://eitco.github.io/build-utilities-maven-plugin/plugin-info.html)
